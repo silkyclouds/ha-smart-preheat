@@ -1,0 +1,308 @@
+################################################################################
+# ha-smart-preheat  --  physics-based predictive preheating for one room
+#
+# Drop this file in  /config/packages/smart_preheat.yaml  and make sure your
+# configuration.yaml contains:
+#
+#   homeassistant:
+#     packages: !include_dir_named packages
+#
+# Then replace the five entity ids below everywhere in this file
+# (one search & replace each -- they are the ONLY things you must change):
+#
+#   sensor.room_temperature     your indoor temperature sensor (the room)
+#   sensor.room_humidity        optional, used to ignore shower steam
+#   sensor.outdoor_temperature  your outdoor probe
+#   weather.home                your weather integration (fallback only)
+#   climate.room_heater         the connected heater
+#
+# Everything else is tuned from the UI. See README.md for the calibration.
+################################################################################
+
+input_boolean:
+  preheat_enable:
+    name: Preheat enabled
+    icon: mdi:radiator
+  preheat_holiday:
+    name: Preheat holiday mode
+    icon: mdi:palm-tree
+
+input_datetime:
+  preheat_morning_target:
+    name: Preheat morning target time
+    has_date: false
+    has_time: true
+  preheat_evening_start:
+    name: Preheat evening start
+    has_date: false
+    has_time: true
+  preheat_evening_end:
+    name: Preheat evening end
+    has_date: false
+    has_time: true
+
+input_number:
+  # --- what you want -------------------------------------------------------
+  preheat_comfort:
+    name: Comfort temperature
+    min: 5
+    max: 30
+    step: 0.5
+    unit_of_measurement: "°C"
+    mode: box
+  preheat_eco:
+    name: Eco temperature
+    min: 5
+    max: 25
+    step: 0.5
+    unit_of_measurement: "°C"
+    mode: box
+
+  # --- the three numbers that describe your room (see README calibration) ---
+  preheat_capacity:
+    name: Thermal mass C
+    min: 50
+    max: 2000
+    step: 10
+    unit_of_measurement: "Wh/°C"
+    mode: box
+  preheat_loss:
+    name: Heat loss UA
+    min: 1
+    max: 120
+    step: 0.5
+    unit_of_measurement: "W/°C"
+    mode: box
+  preheat_power:
+    name: Real delivered power
+    min: 100
+    max: 4000
+    step: 10
+    unit_of_measurement: "W"
+    mode: box
+
+  # --- how hard the room sensor is allowed to push the heater --------------
+  preheat_gain:
+    name: Proportional gain
+    min: 1
+    max: 10
+    step: 0.5
+    mode: box
+  preheat_margin:
+    name: Maximum push
+    min: 1
+    max: 10
+    step: 0.5
+    unit_of_measurement: "°C"
+    mode: box
+
+  # --- safety rails --------------------------------------------------------
+  preheat_max_minutes:
+    name: Preheat cap
+    min: 10
+    max: 480
+    step: 5
+    unit_of_measurement: min
+    mode: box
+  preheat_fallback_minutes_per_degree:
+    name: Fallback minutes per degree
+    min: 5
+    max: 240
+    step: 5
+    unit_of_measurement: min
+    mode: box
+  preheat_shower_humidity:
+    name: Humidity above which the room sensor is not trusted
+    min: 40
+    max: 100
+    step: 1
+    unit_of_measurement: "%"
+    mode: box
+
+################################################################################
+# Sensors -- everything the loop needs, exposed so you can graph it.
+################################################################################
+template:
+  - sensor:
+      - name: "Preheat minutes needed"
+        unique_id: preheat_minutes_needed
+        unit_of_measurement: min
+        icon: mdi:timer-sand
+        state: >-
+          {% set room    = states('sensor.room_temperature') | float(99) %}
+          {% set comfort = states('input_number.preheat_comfort') | float(21) %}
+          {% set cap     = states('input_number.preheat_max_minutes') | float(180) %}
+          {% set probe   = states('sensor.outdoor_temperature') | float(-99) %}
+          {% set fcast   = state_attr('weather.home', 'temperature') | float(-99) %}
+          {% set t_out   = probe if probe > -50 else fcast %}
+          {% set p       = states('input_number.preheat_power') | float(0) %}
+          {% set c       = states('input_number.preheat_capacity') | float(0) %}
+          {% set ua      = states('input_number.preheat_loss') | float(0) %}
+          {# never ask for zero minutes: the last tenth of a degree is the slowest #}
+          {% set gap     = [comfort - room, 0.5] | max %}
+          {% if t_out > -50 and p > 200 and c > 50 and ua > 1 %}
+            {# net power = what is left once the walls have taken their share #}
+            {% set net = [p - ua * (comfort - t_out), 150] | max %}
+            {{ [60 * gap * c / net, cap] | min | round(0) }}
+          {% else %}
+            {# no outdoor reading: fall back on a flat minutes-per-degree rule #}
+            {{ [gap * states('input_number.preheat_fallback_minutes_per_degree') | float(60), cap] | min | round(0) }}
+          {% endif %}
+
+      - name: "Preheat holding power"
+        unique_id: preheat_holding_power
+        unit_of_measurement: W
+        device_class: power
+        icon: mdi:heat-wave
+        state: >-
+          {% set comfort = states('input_number.preheat_comfort') | float(21) %}
+          {% set probe   = states('sensor.outdoor_temperature') | float(-99) %}
+          {% set fcast   = state_attr('weather.home', 'temperature') | float(-99) %}
+          {% set t_out   = probe if probe > -50 else fcast %}
+          {% set ua      = states('input_number.preheat_loss') | float(0) %}
+          {% if t_out > -50 and ua > 1 %}{{ (ua * (comfort - t_out)) | round(0) }}{% else %}unknown{% endif %}
+
+      - name: "Preheat wanted temperature"
+        unique_id: preheat_wanted_temperature
+        unit_of_measurement: "°C"
+        device_class: temperature
+        state: >-
+          {% if is_state('input_boolean.preheat_enable', 'off') %}
+            {{ states('input_number.preheat_eco') | float(17) }}
+          {% elif is_state('input_boolean.preheat_holiday', 'on') %}
+            10
+          {% elif is_state('binary_sensor.preheat_window', 'on') %}
+            {{ states('input_number.preheat_comfort') | float(21) }}
+          {% else %}
+            {{ states('input_number.preheat_eco') | float(17) }}
+          {% endif %}
+
+  - binary_sensor:
+      - name: "Preheat window"
+        unique_id: preheat_window
+        icon: mdi:clock-start
+        state: >-
+          {% set need = states('sensor.preheat_minutes_needed') | float(0) %}
+          {% set now_ts = now().timestamp() %}
+          {% set m_end   = today_at(states('input_datetime.preheat_morning_target')).timestamp() %}
+          {% set m_start = m_end - need * 60 %}
+          {% set e_end   = today_at(states('input_datetime.preheat_evening_end')).timestamp() %}
+          {% set e_start = today_at(states('input_datetime.preheat_evening_start')).timestamp() - need * 60 %}
+          {{ (m_start <= now_ts <= m_end) or (e_start <= now_ts <= e_end) }}
+        attributes:
+          morning_starts_at: >-
+            {% set need = states('sensor.preheat_minutes_needed') | float(0) %}
+            {{ (today_at(states('input_datetime.preheat_morning_target')) - timedelta(minutes=need)).strftime('%H:%M') }}
+          evening_starts_at: >-
+            {% set need = states('sensor.preheat_minutes_needed') | float(0) %}
+            {{ (today_at(states('input_datetime.preheat_evening_start')) - timedelta(minutes=need)).strftime('%H:%M') }}
+
+################################################################################
+# The script -- the ONLY place that ever writes a setpoint to the heater.
+################################################################################
+script:
+  preheat_apply:
+    alias: Preheat - apply setpoint
+    mode: single
+    max_exceeded: silent
+    sequence:
+      - variables:
+          room: "{{ states('sensor.room_temperature') | float(99) }}"
+          wanted: "{{ states('sensor.preheat_wanted_temperature') | float(17) }}"
+          # The heater's own probe sits inside the appliance and always reads
+          # warmer than the room. We do not fight it: we offset it, so that the
+          # room sensor is what really decides.
+          probe: "{{ state_attr('climate.room_heater', 'current_temperature') | float(-99) }}"
+          setpoint: >-
+            {% set gain   = states('input_number.preheat_gain') | float(5) %}
+            {% set margin = states('input_number.preheat_margin') | float(4) %}
+            {% if probe > 5 and probe < 40 %}
+              {% set push = [[gain * (wanted - room), margin] | min, -1 * margin] | max %}
+              {{ [[ ((2 * (probe + push)) | round(0)) / 2, 35] | min, 5] | max }}
+            {% else %}
+              {{ wanted }}
+            {% endif %}
+      - alias: Make sure the heater is on
+        if:
+          - condition: template
+            value_template: "{{ states('climate.room_heater') == 'off' }}"
+        then:
+          - action: climate.set_hvac_mode
+            target: { entity_id: climate.room_heater }
+            data: { hvac_mode: heat }
+      - alias: >-
+          Write it, unless the room sensor is lying. A hot shower one metre from
+          the sensor sends it up two degrees in three minutes; if we believed it
+          we would cut the heating right when the room is coldest.
+        if:
+          - condition: template
+            value_template: >-
+              {{ (state_attr('climate.room_heater', 'temperature') | float(-1) - (setpoint | float(17))) | abs >= 0.4
+                 and states('sensor.room_humidity') | float(0)
+                     < states('input_number.preheat_shower_humidity') | float(74) }}
+        then:
+          - action: climate.set_temperature
+            target: { entity_id: climate.room_heater }
+            data:
+              temperature: "{{ setpoint | float(17) }}"
+
+################################################################################
+# Automations
+################################################################################
+automation:
+  - id: preheat_tick
+    alias: Preheat - recompute
+    description: >-
+      Runs on a slow clock and on every input that can change the answer.
+    mode: single
+    max_exceeded: silent
+    trigger:
+      - platform: time_pattern
+        minutes: "/5"
+      - platform: state
+        entity_id:
+          - sensor.room_temperature
+          - sensor.outdoor_temperature
+          - binary_sensor.preheat_window
+          - input_number.preheat_comfort
+          - input_number.preheat_eco
+          - input_boolean.preheat_enable
+          - input_boolean.preheat_holiday
+      - platform: homeassistant
+        event: start
+    condition: []
+    action:
+      - action: script.preheat_apply
+
+  - id: preheat_defaults
+    alias: Preheat - sane defaults on first start
+    description: >-
+      input_number has no `initial:` on purpose (it would wipe your settings at
+      every restart). This only fills a helper that is still parked at its
+      minimum, i.e. one that has never been set.
+    mode: single
+    trigger:
+      - platform: homeassistant
+        event: start
+    action:
+      - delay: "00:00:30"
+      - repeat:
+          for_each:
+            - { e: input_number.preheat_comfort, v: 21, min: 5 }
+            - { e: input_number.preheat_eco, v: 17, min: 5 }
+            - { e: input_number.preheat_capacity, v: 380, min: 50 }
+            - { e: input_number.preheat_loss, v: 12, min: 1 }
+            - { e: input_number.preheat_power, v: 1120, min: 100 }
+            - { e: input_number.preheat_gain, v: 5, min: 1 }
+            - { e: input_number.preheat_margin, v: 4, min: 1 }
+            - { e: input_number.preheat_max_minutes, v: 180, min: 10 }
+            - { e: input_number.preheat_fallback_minutes_per_degree, v: 60, min: 5 }
+            - { e: input_number.preheat_shower_humidity, v: 74, min: 40 }
+          sequence:
+            - if:
+                - condition: template
+                  value_template: "{{ states(repeat.item.e) | float(0) <= repeat.item.min }}"
+              then:
+                - action: input_number.set_value
+                  target: { entity_id: "{{ repeat.item.e }}" }
+                  data: { value: "{{ repeat.item.v }}" }

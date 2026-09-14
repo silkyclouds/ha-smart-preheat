@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" role="img" aria-label="Control loop">
+<title>Control loop</title>
+<rect width="900" height="420" rx="14" fill="#fbf9f6"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6b7280"/></marker></defs>
+<text x="32" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#14181e" text-anchor="start" font-weight="700" opacity="1.0">How the loop works</text>
+<text x="32" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#6b7280" text-anchor="start" font-weight="400" opacity="1.0">Three inputs, one decision, twice a day.</text>
+<rect x="32" y="90" width="254" height="62" rx="10" fill="#ffffff" stroke="#d8d0c5" stroke-width="1.5"/>
+<rect x="32" y="90" width="4" height="62" rx="2" fill="#eb6834"/>
+<text x="159.0" y="118.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" fill="#14181e" text-anchor="middle" font-weight="600" opacity="1.0">Room sensor</text>
+<text x="159.0" y="136.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">T_room  — Zigbee, in the room</text>
+<rect x="322" y="90" width="254" height="62" rx="10" fill="#ffffff" stroke="#d8d0c5" stroke-width="1.5"/>
+<rect x="322" y="90" width="4" height="62" rx="2" fill="#2a78d6"/>
+<text x="449.0" y="118.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" fill="#14181e" text-anchor="middle" font-weight="600" opacity="1.0">Outdoor sensor + forecast</text>
+<text x="449.0" y="136.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">T_out  — real probe, weather as backup</text>
+<rect x="612" y="90" width="256" height="62" rx="10" fill="#ffffff" stroke="#d8d0c5" stroke-width="1.5"/>
+<rect x="612" y="90" width="4" height="62" rx="2" fill="#4a3aa7"/>
+<text x="740.0" y="118.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" fill="#14181e" text-anchor="middle" font-weight="600" opacity="1.0">Panel probe</text>
+<text x="740.0" y="136.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">T_probe — the heater's own sensor</text>
+<line x1="159" y1="152" x2="450" y2="186" stroke="#6b7280" stroke-width="1.6" marker-end="url(#a)"/>
+<line x1="449" y1="152" x2="450" y2="186" stroke="#6b7280" stroke-width="1.6" marker-end="url(#a)"/>
+<line x1="740" y1="152" x2="450" y2="186" stroke="#6b7280" stroke-width="1.6" marker-end="url(#a)"/>
+<rect x="32" y="190" width="836" height="96" rx="12" fill="#f2ede6" stroke="#d8d0c5" stroke-width="1.5"/>
+<text x="52" y="216" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" fill="#14181e" text-anchor="start" font-weight="700" opacity="1.0">Home Assistant — runs every 5 minutes</text>
+<text x="52" y="244" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#c9531f" text-anchor="start" font-weight="600" opacity="1.0">minutes = 60 × Δ°C × C / ( P − UA × (T_target − T_out) )</text>
+<text x="52" y="268" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#6b7280" text-anchor="start" font-weight="400" opacity="1.0">Open the preheat window exactly that many minutes before the target time.</text>
+<line x1="240" y1="286" x2="240" y2="322" stroke="#6b7280" stroke-width="1.6" marker-end="url(#a)"/>
+<line x1="660" y1="286" x2="660" y2="322" stroke="#6b7280" stroke-width="1.6" marker-end="url(#a)"/>
+<rect x="70" y="324" width="340" height="60" rx="10" fill="#ffffff" stroke="#d8d0c5" stroke-width="1.5"/>
+<rect x="70" y="324" width="4" height="60" rx="2" fill="#2e7d5b"/>
+<text x="240.0" y="351.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" fill="#14181e" text-anchor="middle" font-weight="600" opacity="1.0">Window open?</text>
+<text x="240.0" y="369.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">then push a setpoint, else drop to eco</text>
+<rect x="490" y="324" width="378" height="60" rx="10" fill="#ffffff" stroke="#d8d0c5" stroke-width="1.5"/>
+<rect x="490" y="324" width="4" height="60" rx="2" fill="#c9531f"/>
+<text x="679.0" y="351.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.5" fill="#14181e" text-anchor="middle" font-weight="600" opacity="1.0">Setpoint = T_probe + gain × (T_want − T_room)</text>
+<text x="679.0" y="369.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">the room sensor drives the panel, not its own probe</text>
+<text x="32" y="408" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="400" opacity="1.0">C = thermal mass (Wh/°C)   ·   UA = heat loss (W/°C)   ·   P = real delivered power (W)</text>
+</svg>
