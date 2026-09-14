@@ -173,12 +173,34 @@ Ours: **−0.146 °C/h at a 4.6 °C difference → UA ≈ 12 W/°C**.
 > different. Re-measure once winter arrives — it is the number that decides
 > whether your panel is big enough.
 
-### Sanity check
+### Sanity check, and what "watts" means here
 
 `UA × (comfort − coldest expected outdoor)` is the power you need just to *hold*
-temperature. For us at −10 °C: `12 × 33 = 396 W`, comfortably under 1120 W.
-If that number approaches your panel's power, the panel is undersized for the
-room and no automation will fix it.
+temperature. For us at −10 °C: `12 × 33 = **396 W**`.
+
+**That 396 W is an average, and it is the number to compare against the panel.**
+An electric panel has two states: drawing its full 1120 W, or drawing nothing.
+It delivers 396 W *on average* by cycling — roughly 21 minutes on, 39 off, every
+hour. That is the modulation: a duty cycle, not a dimmer.
+
+So the comparison to make is:
+
+| | |
+|---|---|
+| Power needed on average, at −10 °C | 396 W |
+| Panel power when it runs | 1120 W |
+| Duty cycle | ~35 % of the time |
+| Energy over that hour | 396 Wh, about €0.12 at €0.30/kWh |
+
+If the average needed approaches the panel's power, the duty cycle approaches
+100 %, the room never catches up, and **the panel is undersized** — no automation
+will fix that. At a third of the time, there is plenty of headroom for the
+preheat push and for a colder-than-forecast night.
+
+> Watts and watt-hours, since they both appear above: `P` and `UA × ΔT` are
+> **watts** — a rate. `C` is **Wh per °C** — an amount of energy stored in the
+> room's walls, floor and air. The formula divides one by the other, which is why
+> the answer comes out in hours.
 
 ---
 
