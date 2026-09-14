@@ -123,7 +123,9 @@ def energy_balance():
 
     bx, by, bw, bh = 32, 286, 836, 140
     s += f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="12" fill="{PANEL}" stroke="{LINE}" stroke-width="1.5"/>\n'
-    s += txt(bx + 20, by + 26, "Power just to hold 23 °C", 12.5, INK, "start", "700")
+    s += txt(bx + 20, by + 22, "Average power just to hold 23 °C", 12.5, INK, "start", "700")
+    s += txt(bx + 20, by + 38, "the panel cycles on and off", 10.5, MUTED)
+    s += txt(bx + 20, by + 52, "to deliver it", 10.5, MUTED)
     cases = [(15, "15 °C"), (10, "10 °C"), (5, "5 °C"), (0, "0 °C"), (-5, "−5 °C"), (-10, "−10 °C")]
     for i, (t, lab) in enumerate(cases):
         p = UA * (23 - t)
@@ -132,8 +134,6 @@ def energy_balance():
         s += f'<rect x="{cx}" y="{by + 108 - hh}" width="40" height="{hh}" rx="4" fill="{OUT}" opacity="0.85"/>\n'
         s += txt(cx + 20, by + 126, lab, 11, MUTED, "middle")
         s += txt(cx + 20, by + 100 - hh, f"{int(p)} W", 11.5, INK, "middle", "700")
-    s += txt(bx + 20, by + 48, "for each outdoor", 11, MUTED)
-    s += txt(bx + 20, by + 64, "temperature", 11, MUTED)
     s += txt(bx + 20, by + 92, "always far under", 11, GREEN, "start", "600")
     s += txt(bx + 20, by + 108, "the panel's 1120 W", 11, GREEN, "start", "600")
     return s + "</svg>\n"
