@@ -201,7 +201,7 @@ def measured_night():
     s += f'<rect x="{X(7.08)}" y="{T}" width="{X(7.20)-X(7.08)}" height="{ph}" fill="{OUT}" opacity="0.10"/>\n'
     s += txt(X(7.14), T + 18, "shower", 10.5, OUT, "middle", "700")
 
-    g = ymin
+    g = 20.0
     while g <= ymax + 0.01:
         s += f'<line x1="{L}" y1="{Y(g)}" x2="{L+pw}" y2="{Y(g)}" stroke="{LINE}" stroke-width="1"/>\n'
         s += txt(L - 12, Y(g) + 4, f"{g:.0f}°", 11, MUTED, "end")
@@ -224,7 +224,7 @@ def measured_night():
     s += f'<line x1="{L}" y1="{Y(17.5) if 17.5>ymin else T+ph}" x2="{L}" y2="{T+ph}" stroke="none"/>\n'
     s += txt(X(4.1), Y(21.9) - 14, "drifting down −0.15 °C/h all night", 11, MUTED, "start")
     s += txt(X(5.95), Y(22.4) + 22, "+2.3 °C/h measured", 11.5, WARM, "start", "700")
-    s += txt(X(7.24), Y(23.5) + 20, "shower, not the panel", 11, OUT, "start", "600")
+    s += txt(X(7.24), Y(21.9), "shower, not the panel", 11, OUT, "start", "600")
     s += txt(32, H - 20, "405 Wh were spent for the last +1.0 °C — that measurement is what gave C = 380 Wh/°C.", 11, MUTED)
     return s + "</svg>\n"
 
