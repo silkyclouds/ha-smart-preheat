@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" role="img" aria-label="Energy balance">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="452" viewBox="0 0 900 452" role="img" aria-label="Energy balance">
 <title>Energy balance</title>
-<rect width="900" height="400" rx="14" fill="#fbf9f6"/>
+<rect width="900" height="452" rx="14" fill="#fbf9f6"/>
 <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6b7280"/></marker></defs>
 <text x="32" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#14181e" text-anchor="start" font-weight="700" opacity="1.0">Why the outdoor temperature changes everything</text>
 <text x="32" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#6b7280" text-anchor="start" font-weight="400" opacity="1.0">Only the leftover power heats the room.</text>
@@ -13,26 +13,28 @@
 <line x1="516" y1="205" x2="830" y2="205" stroke="#2a78d6" stroke-width="3" marker-end="url(#a)"/>
 <text x="522" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#2a78d6" text-anchor="start" font-weight="600" opacity="1.0">UA × ΔT out</text>
 <text x="522" y="228" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#6b7280" text-anchor="start" font-weight="400" opacity="1.0">UA = 12 W/°C</text>
-<rect x="32" y="286" width="836" height="86" rx="12" fill="#f2ede6" stroke="#d8d0c5" stroke-width="1.5"/>
+<rect x="32" y="286" width="836" height="140" rx="12" fill="#f2ede6" stroke="#d8d0c5" stroke-width="1.5"/>
 <text x="52" y="312" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#14181e" text-anchor="start" font-weight="700" opacity="1.0">Power just to hold 23 °C</text>
-<rect x="182" y="339.75757575757575" width="34" height="8.242424242424242" rx="3" fill="#2a78d6" opacity="0.85"/>
-<text x="199" y="362" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">15 °C</text>
-<text x="199" y="333.75757575757575" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#14181e" text-anchor="middle" font-weight="600" opacity="1.0">96 W</text>
-<rect x="274" y="334.6060606060606" width="34" height="13.393939393939393" rx="3" fill="#2a78d6" opacity="0.85"/>
-<text x="291" y="362" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">10 °C</text>
-<text x="291" y="328.6060606060606" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#14181e" text-anchor="middle" font-weight="600" opacity="1.0">156 W</text>
-<rect x="366" y="329.45454545454544" width="34" height="18.545454545454543" rx="3" fill="#2a78d6" opacity="0.85"/>
-<text x="383" y="362" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">5 °C</text>
-<text x="383" y="323.45454545454544" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#14181e" text-anchor="middle" font-weight="600" opacity="1.0">216 W</text>
-<rect x="458" y="324.3030303030303" width="34" height="23.6969696969697" rx="3" fill="#2a78d6" opacity="0.85"/>
-<text x="475" y="362" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">0 °C</text>
-<text x="475" y="318.3030303030303" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#14181e" text-anchor="middle" font-weight="600" opacity="1.0">276 W</text>
-<rect x="550" y="319.1515151515151" width="34" height="28.848484848484848" rx="3" fill="#2a78d6" opacity="0.85"/>
-<text x="567" y="362" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">−5 °C</text>
-<text x="567" y="313.1515151515151" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#14181e" text-anchor="middle" font-weight="600" opacity="1.0">336 W</text>
-<rect x="642" y="314.0" width="34" height="34.0" rx="3" fill="#2a78d6" opacity="0.85"/>
-<text x="659" y="362" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">−10 °C</text>
-<text x="659" y="308.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#14181e" text-anchor="middle" font-weight="600" opacity="1.0">396 W</text>
-<text x="52" y="334" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="400" opacity="1.0">outside</text>
-<text x="52" y="352" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#2e7d5b" text-anchor="start" font-weight="600" opacity="1.0">→ always &lt; 1120 W</text>
+<rect x="204" y="375.57575757575756" width="40" height="18.424242424242426" rx="4" fill="#2a78d6" opacity="0.85"/>
+<text x="224" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">15 °C</text>
+<text x="224" y="367.57575757575756" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#14181e" text-anchor="middle" font-weight="700" opacity="1.0">96 W</text>
+<rect x="308" y="364.06060606060606" width="40" height="29.939393939393938" rx="4" fill="#2a78d6" opacity="0.85"/>
+<text x="328" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">10 °C</text>
+<text x="328" y="356.06060606060606" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#14181e" text-anchor="middle" font-weight="700" opacity="1.0">156 W</text>
+<rect x="412" y="352.54545454545456" width="40" height="41.45454545454545" rx="4" fill="#2a78d6" opacity="0.85"/>
+<text x="432" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">5 °C</text>
+<text x="432" y="344.54545454545456" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#14181e" text-anchor="middle" font-weight="700" opacity="1.0">216 W</text>
+<rect x="516" y="341.030303030303" width="40" height="52.969696969696976" rx="4" fill="#2a78d6" opacity="0.85"/>
+<text x="536" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">0 °C</text>
+<text x="536" y="333.030303030303" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#14181e" text-anchor="middle" font-weight="700" opacity="1.0">276 W</text>
+<rect x="620" y="329.5151515151515" width="40" height="64.48484848484848" rx="4" fill="#2a78d6" opacity="0.85"/>
+<text x="640" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">−5 °C</text>
+<text x="640" y="321.5151515151515" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#14181e" text-anchor="middle" font-weight="700" opacity="1.0">336 W</text>
+<rect x="724" y="318.0" width="40" height="76.0" rx="4" fill="#2a78d6" opacity="0.85"/>
+<text x="744" y="412" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">−10 °C</text>
+<text x="744" y="310.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#14181e" text-anchor="middle" font-weight="700" opacity="1.0">396 W</text>
+<text x="52" y="334" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="400" opacity="1.0">for each outdoor</text>
+<text x="52" y="350" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="400" opacity="1.0">temperature</text>
+<text x="52" y="378" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#2e7d5b" text-anchor="start" font-weight="600" opacity="1.0">always far under</text>
+<text x="52" y="394" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#2e7d5b" text-anchor="start" font-weight="600" opacity="1.0">the panel's 1120 W</text>
 </svg>

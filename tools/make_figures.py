@@ -104,7 +104,7 @@ def control_loop():
 # 2. energy balance
 # ===========================================================================
 def energy_balance():
-    W, H = 900, 400
+    W, H = 900, 452
     s = head(W, H, "Energy balance") + defs()
     s += txt(32, 40, "Why the outdoor temperature changes everything", 18, INK, "start", "700")
     s += txt(32, 62, "Only the leftover power heats the room.", 12.5, MUTED)
@@ -121,19 +121,21 @@ def energy_balance():
     s += txt(rx + rw + 12, 195, "UA × ΔT out", 12.5, OUT, "start", "600")
     s += txt(rx + rw + 12, 228, "UA = 12 W/°C", 11.5, MUTED, "start", "400", MONO)
 
-    bx, by, bw, bh = 32, 286, 836, 86
+    bx, by, bw, bh = 32, 286, 836, 140
     s += f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="12" fill="{PANEL}" stroke="{LINE}" stroke-width="1.5"/>\n'
     s += txt(bx + 20, by + 26, "Power just to hold 23 °C", 12.5, INK, "start", "700")
     cases = [(15, "15 °C"), (10, "10 °C"), (5, "5 °C"), (0, "0 °C"), (-5, "−5 °C"), (-10, "−10 °C")]
     for i, (t, lab) in enumerate(cases):
         p = UA * (23 - t)
-        cx = bx + 150 + i * 92
-        hh = 34 * (p / (UA * 33))
-        s += f'<rect x="{cx}" y="{by + 62 - hh}" width="34" height="{hh}" rx="3" fill="{OUT}" opacity="0.85"/>\n'
-        s += txt(cx + 17, by + 76, lab, 10.5, MUTED, "middle")
-        s += txt(cx + 17, by + 56 - hh, f"{int(p)} W", 11, INK, "middle", "600")
-    s += txt(bx + 20, by + 48, "outside", 11, MUTED)
-    s += txt(bx + 20, by + 66, "→ always < 1120 W", 11, GREEN, "start", "600")
+        cx = bx + 172 + i * 104
+        hh = 76 * (p / (UA * 33))
+        s += f'<rect x="{cx}" y="{by + 108 - hh}" width="40" height="{hh}" rx="4" fill="{OUT}" opacity="0.85"/>\n'
+        s += txt(cx + 20, by + 126, lab, 11, MUTED, "middle")
+        s += txt(cx + 20, by + 100 - hh, f"{int(p)} W", 11.5, INK, "middle", "700")
+    s += txt(bx + 20, by + 48, "for each outdoor", 11, MUTED)
+    s += txt(bx + 20, by + 64, "temperature", 11, MUTED)
+    s += txt(bx + 20, by + 92, "always far under", 11, GREEN, "start", "600")
+    s += txt(bx + 20, by + 108, "the panel's 1120 W", 11, GREEN, "start", "600")
     return s + "</svg>\n"
 
 # ===========================================================================
@@ -182,7 +184,7 @@ def preheat_simulation():
 # ===========================================================================
 def measured_night():
     W, H = 900, 440
-    L, R, T, B = 78, 44, 96, 70
+    L, R, T, B = 78, 78, 96, 70
     pw, ph = W - L - R, H - T - B
     s = head(W, H, "Measured night") + defs()
     s += txt(32, 40, "One real morning", 18, INK, "start", "700")
@@ -208,7 +210,7 @@ def measured_night():
         s += txt(X(hh), T + ph + 22, f"{hh:02d}:00", 11, MUTED, "middle")
 
     s += f'<line x1="{L}" y1="{Y(23)}" x2="{L+pw}" y2="{Y(23)}" stroke="{GREEN}" stroke-width="1.6" stroke-dasharray="5 5"/>\n'
-    s += txt(L + pw, Y(23) - 8, "target 23 °C", 11, GREEN, "end", "700")
+    s += txt(L + 8, Y(23) - 9, "target 23 °C", 11, GREEN, "start", "700")
 
     # measured anchors (room sensor, 0.2 C quantisation)
     pts = [(4.0,21.9),(4.5,21.8),(5.0,21.7),(5.32,21.6),(5.6,22.0),(5.9,22.4),
@@ -222,7 +224,7 @@ def measured_night():
     s += f'<line x1="{L}" y1="{Y(17.5) if 17.5>ymin else T+ph}" x2="{L}" y2="{T+ph}" stroke="none"/>\n'
     s += txt(X(4.1), Y(21.9) - 14, "drifting down −0.15 °C/h all night", 11, MUTED, "start")
     s += txt(X(5.95), Y(22.4) + 22, "+2.3 °C/h measured", 11.5, WARM, "start", "700")
-    s += txt(X(7.25), Y(23.5) - 10, "shower, not the panel", 11, OUT, "start", "600")
+    s += txt(X(7.24), Y(23.5) + 20, "shower, not the panel", 11, OUT, "start", "600")
     s += txt(32, H - 20, "405 Wh were spent for the last +1.0 °C — that measurement is what gave C = 380 Wh/°C.", 11, MUTED)
     return s + "</svg>\n"
 

@@ -4,45 +4,45 @@
 <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6b7280"/></marker></defs>
 <text x="32" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#14181e" text-anchor="start" font-weight="700" opacity="1.0">One real morning</text>
 <text x="32" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#6b7280" text-anchor="start" font-weight="400" opacity="1.0">14 September 2026 — target 23 °C at 06:15, outside 17.5 °C.</text>
-<rect x="334.74000000000007" y="96" width="180.88499999999993" height="274" fill="#c9531f" opacity="0.08"/>
-<text x="425.1825" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#c9531f" text-anchor="middle" font-weight="700" opacity="1.0">preheat window</text>
-<rect x="677.0600000000001" y="96" width="23.340000000000032" height="274" fill="#2a78d6" opacity="0.10"/>
-<text x="688.7299999999999" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" fill="#2a78d6" text-anchor="middle" font-weight="700" opacity="1.0">shower</text>
-<line x1="78" y1="370.0" x2="856" y2="370.0" stroke="#d8d0c5" stroke-width="1"/>
+<rect x="323.52000000000004" y="96" width="172.97999999999996" height="274" fill="#c9531f" opacity="0.08"/>
+<text x="410.01" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#c9531f" text-anchor="middle" font-weight="700" opacity="1.0">preheat window</text>
+<rect x="650.88" y="96" width="22.32000000000005" height="274" fill="#2a78d6" opacity="0.10"/>
+<text x="662.04" y="114" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10.5" fill="#2a78d6" text-anchor="middle" font-weight="700" opacity="1.0">shower</text>
+<line x1="78" y1="370.0" x2="822" y2="370.0" stroke="#d8d0c5" stroke-width="1"/>
 <text x="66" y="374.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="end" font-weight="400" opacity="1.0">20°</text>
-<line x1="78" y1="309.1111111111111" x2="856" y2="309.1111111111111" stroke="#d8d0c5" stroke-width="1"/>
+<line x1="78" y1="309.1111111111111" x2="822" y2="309.1111111111111" stroke="#d8d0c5" stroke-width="1"/>
 <text x="66" y="313.1111111111111" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="end" font-weight="400" opacity="1.0">20°</text>
-<line x1="78" y1="248.22222222222223" x2="856" y2="248.22222222222223" stroke="#d8d0c5" stroke-width="1"/>
+<line x1="78" y1="248.22222222222223" x2="822" y2="248.22222222222223" stroke="#d8d0c5" stroke-width="1"/>
 <text x="66" y="252.22222222222223" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="end" font-weight="400" opacity="1.0">22°</text>
-<line x1="78" y1="187.33333333333334" x2="856" y2="187.33333333333334" stroke="#d8d0c5" stroke-width="1"/>
+<line x1="78" y1="187.33333333333334" x2="822" y2="187.33333333333334" stroke="#d8d0c5" stroke-width="1"/>
 <text x="66" y="191.33333333333334" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="end" font-weight="400" opacity="1.0">22°</text>
-<line x1="78" y1="126.44444444444446" x2="856" y2="126.44444444444446" stroke="#d8d0c5" stroke-width="1"/>
+<line x1="78" y1="126.44444444444446" x2="822" y2="126.44444444444446" stroke="#d8d0c5" stroke-width="1"/>
 <text x="66" y="130.44444444444446" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="end" font-weight="400" opacity="1.0">24°</text>
 <text x="78.0" y="392" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">04:00</text>
-<text x="272.5" y="392" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">05:00</text>
-<text x="467.0" y="392" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">06:00</text>
-<text x="661.5" y="392" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">07:00</text>
-<text x="856.0" y="392" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">08:00</text>
-<line x1="78" y1="156.88888888888889" x2="856" y2="156.88888888888889" stroke="#2e7d5b" stroke-width="1.6" stroke-dasharray="5 5"/>
-<text x="856" y="148.88888888888889" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#2e7d5b" text-anchor="end" font-weight="700" opacity="1.0">target 23 °C</text>
-<polyline points="78.0,223.9 175.2,230.0 272.5,236.0 334.7,242.1 389.2,217.8 447.6,193.4 486.4,175.2 515.6,156.9 583.7,156.9 661.5,156.9 677.1,156.9 700.4,126.4 758.8,138.6 856.0,163.0" fill="none" stroke="#eb6834" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="264.0" y="392" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">05:00</text>
+<text x="450.0" y="392" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">06:00</text>
+<text x="636.0" y="392" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">07:00</text>
+<text x="822.0" y="392" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" font-weight="400" opacity="1.0">08:00</text>
+<line x1="78" y1="156.88888888888889" x2="822" y2="156.88888888888889" stroke="#2e7d5b" stroke-width="1.6" stroke-dasharray="5 5"/>
+<text x="86" y="147.88888888888889" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#2e7d5b" text-anchor="start" font-weight="700" opacity="1.0">target 23 °C</text>
+<polyline points="78.0,223.9 171.0,230.0 264.0,236.0 323.5,242.1 375.6,217.8 431.4,193.4 468.6,175.2 496.5,156.9 561.6,156.9 636.0,156.9 650.9,156.9 673.2,126.4 729.0,138.6 822.0,163.0" fill="none" stroke="#eb6834" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
 <circle cx="78.0" cy="223.9" r="2.6" fill="#eb6834"/>
-<circle cx="175.2" cy="230.0" r="2.6" fill="#eb6834"/>
-<circle cx="272.5" cy="236.0" r="2.6" fill="#eb6834"/>
-<circle cx="334.7" cy="242.1" r="2.6" fill="#eb6834"/>
-<circle cx="389.2" cy="217.8" r="2.6" fill="#eb6834"/>
-<circle cx="447.6" cy="193.4" r="2.6" fill="#eb6834"/>
-<circle cx="486.4" cy="175.2" r="2.6" fill="#eb6834"/>
-<circle cx="515.6" cy="156.9" r="2.6" fill="#eb6834"/>
-<circle cx="583.7" cy="156.9" r="2.6" fill="#eb6834"/>
-<circle cx="661.5" cy="156.9" r="2.6" fill="#eb6834"/>
-<circle cx="677.1" cy="156.9" r="2.6" fill="#eb6834"/>
-<circle cx="700.4" cy="126.4" r="2.6" fill="#eb6834"/>
-<circle cx="758.8" cy="138.6" r="2.6" fill="#eb6834"/>
-<circle cx="856.0" cy="163.0" r="2.6" fill="#eb6834"/>
+<circle cx="171.0" cy="230.0" r="2.6" fill="#eb6834"/>
+<circle cx="264.0" cy="236.0" r="2.6" fill="#eb6834"/>
+<circle cx="323.5" cy="242.1" r="2.6" fill="#eb6834"/>
+<circle cx="375.6" cy="217.8" r="2.6" fill="#eb6834"/>
+<circle cx="431.4" cy="193.4" r="2.6" fill="#eb6834"/>
+<circle cx="468.6" cy="175.2" r="2.6" fill="#eb6834"/>
+<circle cx="496.5" cy="156.9" r="2.6" fill="#eb6834"/>
+<circle cx="561.6" cy="156.9" r="2.6" fill="#eb6834"/>
+<circle cx="636.0" cy="156.9" r="2.6" fill="#eb6834"/>
+<circle cx="650.9" cy="156.9" r="2.6" fill="#eb6834"/>
+<circle cx="673.2" cy="126.4" r="2.6" fill="#eb6834"/>
+<circle cx="729.0" cy="138.6" r="2.6" fill="#eb6834"/>
+<circle cx="822.0" cy="163.0" r="2.6" fill="#eb6834"/>
 <line x1="78" y1="370" x2="78" y2="370" stroke="none"/>
-<text x="97.44999999999993" y="209.86666666666676" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="400" opacity="1.0">drifting down −0.15 °C/h all night</text>
-<text x="457.27500000000003" y="215.4222222222223" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#c9531f" text-anchor="start" font-weight="700" opacity="1.0">+2.3 °C/h measured</text>
-<text x="710.125" y="116.44444444444446" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#2a78d6" text-anchor="start" font-weight="600" opacity="1.0">shower, not the panel</text>
+<text x="96.59999999999994" y="209.86666666666676" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="400" opacity="1.0">drifting down −0.15 °C/h all night</text>
+<text x="440.70000000000005" y="215.4222222222223" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#c9531f" text-anchor="start" font-weight="700" opacity="1.0">+2.3 °C/h measured</text>
+<text x="680.64" y="146.44444444444446" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#2a78d6" text-anchor="start" font-weight="600" opacity="1.0">shower, not the panel</text>
 <text x="32" y="420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="start" font-weight="400" opacity="1.0">405 Wh were spent for the last +1.0 °C — that measurement is what gave C = 380 Wh/°C.</text>
 </svg>
